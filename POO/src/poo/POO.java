@@ -1,23 +1,43 @@
 package poo;
 
+import Logica.Jefe;
 import Logica.Alumno;
 import Logica.Consultor;
 import Logica.Empleado;
+import Logica.Persona;
 
 public class POO
 {
 
     public static void main(String[] args)
     {
-         Empleado empleado = new Empleado();
-         empleado.getNumeroLegajo();
-         empleado.getNombre();
-         empleado.getApellidos();
-         
-         Consultor consultor = new Consultor();
-         consultor.getNombreConsultor();
-         consultor.getNumeroConsultor();
-         consultor.getDomicilio();
+        
+           Persona vectorPersona[] = new Persona[5];
+           
+           vectorPersona[0] = new Persona();
+           vectorPersona[1] = new Empleado();
+           vectorPersona[2] = new Consultor();
+           vectorPersona[3] = new Jefe();
+           
+           
+           Persona persona = new Persona();
+           Consultor consultor = new Consultor();
+           
+           persona = consultor;
+           
+            //No puede, por que nu funciona el polimorfismo devido a que siempre es de padres a hijos o de super clase a subclases
+           //consultor = persona;
+           
+           
+//         Empleado empleado = new Empleado();
+//         empleado.getNumeroLegajo();
+//         empleado.getNombre();
+//         empleado.getApellidos();
+//         
+//         Consultor consultor = new Consultor();
+//         consultor.getNombreConsultor();
+//         consultor.getNumeroConsultor();
+//         consultor.getDomicilio();
         
 //        Alumno alumno = new Alumno();
 //        Alumno alumno1 = new Alumno(55555, "Emilio", "Barrera");

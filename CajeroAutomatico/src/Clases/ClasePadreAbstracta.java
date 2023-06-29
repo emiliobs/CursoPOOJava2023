@@ -2,12 +2,27 @@ package Clases;
 
 import java.util.Scanner;
 
-public class ClasePadreAbstracta
+public abstract class ClasePadreAbstracta
 {
 
     protected int transacciones, retiro, deposito;
     private static int saldo;
+    
     Scanner entrada = new Scanner(System.in);
+
+    
+    //Métodos Seter and Getter
+    public  int getSaldo()
+    {
+        return saldo;
+    }
+
+    public  void setSaldo(int saldo)
+    {
+        this.saldo = saldo;
+    }
+    
+    
 
     public void Operaciones()
     {
@@ -49,17 +64,25 @@ public class ClasePadreAbstracta
             if (seleccion == 1)
             {
                 System.out.println("");
-                System.out.println("Consulta Saldo");
+                ClasePadreAbstracta mensajero = new ClaseHIjaConsulta();
+                mensajero.Transacciones();
+                System.out.println("");
+
             }
             else if (seleccion == 2)
             {
                 System.out.println("");
-                System.out.println("Retiro enefectivo");
+                ClasePadreAbstracta mensajero = new ClaseHijaRetiro();
+                mensajero.Transacciones();
+                System.out.println("");
+
             }
             else if (seleccion == 3)
             {
                 System.out.println("");
-                System.out.println("Deposito enEfectivo");
+                ClasePadreAbstracta mensajero = new ClaseHijaDeposito();
+                mensajero.Transacciones();
+                System.out.println("");
             }
             else if (seleccion == 4)
             {
@@ -75,5 +98,26 @@ public class ClasePadreAbstracta
         while (bandera != 2);
 
     }
+    
+    
+    //Método para solicitar cantidad de retiro:
+    public void Retiro()
+    {
+        
+        retiro = entrada.nextInt();
+         
+    }
+    
+    //Método para solicitar deposito:
+    public void Deposito()
+    {
+        
+        deposito = entrada.nextInt();
+         
+    }
+    
+    
+    //Método Abstracto
+    public abstract  void Transacciones();
 
 }

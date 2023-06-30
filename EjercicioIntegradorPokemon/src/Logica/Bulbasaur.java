@@ -1,7 +1,14 @@
 package Logica;
 
-public class Bulbasaur extends Pokemon
+import Interfaz.IPlanta;
+
+public class Bulbasaur extends Pokemon implements IPlanta
 {
+
+    public Bulbasaur()
+    {
+    }
+    
 
     @Override
     protected void AtacaPlacaje()
@@ -19,6 +26,18 @@ public class Bulbasaur extends Pokemon
     protected void AtacaMordisco()
     {
         System.out.println("Hola soy Bulbasaur y este es mi ataque mordisco.");
+    }
+
+    @Override
+    public void AtacarDrenaje()
+    {
+        System.out.println("Hola soy Bulbasour y este es mi ataque drenaje. ");
+    }
+
+    @Override
+    public void AtacarParalizar()
+    {
+      System.out.println("Hola soy Bulbasour y este es mi ataque paralizar. ");
     }
     
 }

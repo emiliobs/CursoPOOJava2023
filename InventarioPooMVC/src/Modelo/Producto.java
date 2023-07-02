@@ -1,14 +1,14 @@
 package Modelo;
 
 
-public class ProductoDTO
+public class Producto
 {
     private int codigo;
     private String nombre;
     private double precio;
     private int inventario;
 
-    public ProductoDTO(String nombre, double precio, int inventario)
+    public Producto(String nombre, double precio, int inventario)
     {
        
         this.nombre = nombre;
@@ -16,7 +16,7 @@ public class ProductoDTO
         this.inventario = inventario;
     }
 
-    public ProductoDTO(int codigo, String nombre, double precio, int inventario)
+    public Producto(int codigo, String nombre, double precio, int inventario)
     {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -26,7 +26,7 @@ public class ProductoDTO
     
     
 
-    public ProductoDTO()
+    public Producto()
     {
     }
 

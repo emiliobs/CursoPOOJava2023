@@ -16,5 +16,5 @@ Parte 6 – Agregar - Producto DAO Controlador.
 Parte 7 – Actualizar - Producto DAO Controlador.
 Parte 8 – Borrar - Producto DAO Controlador. 
 
-# App Iventario - Mostrarndo los registros y mas..
+# CRUD Inventario - Mostrarndo los registros y mas..
 <img width="1268" alt="image" src="https://github.com/emiliobs/CursoPOOJava2023/assets/3122465/2d081934-8a66-40c1-bc5f-1b28dd5ff18c">

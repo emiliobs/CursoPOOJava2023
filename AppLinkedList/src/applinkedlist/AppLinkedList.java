@@ -12,6 +12,7 @@ public class AppLinkedList
     {
         System.out.println("-----   LinkedList   ------");
         LinkedList<Persona> linkPersonas = new LinkedList<Persona>();
+        Persona personaMostrar = new Persona(23444, "Mostrando", 456);
         
         
         //Agregar personas al final de la la listas
@@ -20,6 +21,8 @@ public class AppLinkedList
         linkPersonas.add(new Persona(4, "HEctor Barrera", 45));
         linkPersonas.add(new Persona(5, "Carla linda", 25));
         linkPersonas.add(new Persona(6, "Lina", 75));
+        
+         System.out.println(personaMostrar);
         
         //Agregar al principio
         linkPersonas.add(0, new Persona(98, "Al principio", 45));

@@ -23,7 +23,7 @@ public class ConexionBD
         }
         catch (SQLException e)
         {
-            System.out.println("Error en la C0nexión :( " + e);
+            System.out.println("Error en la Conexión :( " + e);
         }
         
         return  connection;

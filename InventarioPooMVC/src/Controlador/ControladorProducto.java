@@ -25,7 +25,7 @@ public class ControladorProducto implements ActionListener
     DefaultTableModel modeloTabla = new DefaultTableModel();
     
     //Variables Globales
-    private int codigo;
+    private int codigo = 0;
     private String nombre;
     private double precio;
     private  int inventario;
@@ -220,6 +220,29 @@ public class ControladorProducto implements ActionListener
         }
     }
     
+    private  void BorrarProducto()
+    {
+        try
+        {
+            if (codigo != 0)
+            {
+                ProductoDAO.Borrar(codigo);
+                JOptionPane.showMessageDialog(null,"Registro Borrrado!");
+                LimpiarCampo();
+            }
+        }
+        catch (HeadlessException e)
+        {
+            JOptionPane.showMessageDialog(null,"Debe seleccionar un Porducto de la Tabla.","ERROR", JOptionPane.ERROR_MESSAGE );
+            System.out.println("ERROR Borrar el Producto Controlado: " + e);
+        }
+        finally
+        {
+            ListarTabla();
+        }
+    }
+    
+    
     //Dar acciones a los botones:
     @Override
     public void actionPerformed(ActionEvent e)
@@ -237,6 +260,11 @@ public class ControladorProducto implements ActionListener
         if (e.getSource() == vista.getBtnActualizar())
         {
             Actializar();
+        }
+        
+        if (e.getSource() == vista.getBtnBorrar())
+        {
+            BorrarProducto();
         }
     }
 

@@ -91,4 +91,22 @@ public class ProductoDAO
         }
     }
     
+    
+    //Metodo Borrar:
+    public  void Borrar(int id)
+    {
+        String sql = "Delete From productos Where codigo ="+ id;
+        
+        try
+        {
+            connection = conexionBD.ConectarBaseDatos();
+            preparedStatement = connection.prepareCall(sql);
+            
+            preparedStatement.executeUpdate();
+        }
+        catch (SQLException e)
+        {
+            System.out.println("ERROR Borrar Dato en DAO: " + e);
+        }
+    }
 }

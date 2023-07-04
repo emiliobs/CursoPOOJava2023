@@ -145,7 +145,7 @@ public class ControladorProducto implements ActionListener
         }
         catch (NumberFormatException e)
         {
-            
+                   
             JOptionPane.showConfirmDialog(null, "Los campo Precio e INventario deben ser Númericos", "ERROR", JOptionPane.ERROR_MESSAGE);
             System.out.println("ERROR al cargar Datos: " + e);
         

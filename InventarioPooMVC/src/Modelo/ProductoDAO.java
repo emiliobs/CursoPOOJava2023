@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 
 public class ProductoDAO
@@ -64,6 +65,7 @@ public class ProductoDAO
         }
         catch (SQLException e)
         {
+            JOptionPane.showMessageDialog(null,"El Producto Ingresado Ya Existe en BD.","ERROR", JOptionPane.ERROR_MESSAGE );
             System.out.println("ERROR en Agregar DAO: " + e );
         }
     }

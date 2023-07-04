@@ -60,11 +60,11 @@ public class ProductoDAO
           preparedStatement.setDouble(2, producto.getPrecio());
           preparedStatement.setInt(3, producto.getInventario());
           
-          preparedStatement.executeQuery();
+          preparedStatement.executeUpdate();
         }
         catch (SQLException e)
         {
-            System.out.println("ERROR en Agregar " + e );
+            System.out.println("ERROR en Agregar DAO: " + e );
         }
     }
     

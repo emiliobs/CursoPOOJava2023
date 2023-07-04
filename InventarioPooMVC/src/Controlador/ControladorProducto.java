@@ -94,7 +94,7 @@ public class ControladorProducto implements ActionListener
         }
         catch (Exception e)
         {
-            System.out.println("Error: " + e);
+            System.out.println("Error en Controlador: " + e);
         }
 
     }
@@ -177,7 +177,8 @@ public class ControladorProducto implements ActionListener
                     Producto producto = new Producto(nombre, precio, inventario);
                     ProductoDAO.Agregar(producto);
                     
-                    JOptionPane.showConfirmDialog(null,"Registro Guardado de forma Exitosa!");
+                    JOptionPane.showMessageDialog(null,"Registro Guardado de forma Exitosa!");
+                    LimpiarCampo();
                 }
             }
         }
@@ -188,6 +189,7 @@ public class ControladorProducto implements ActionListener
         finally
         {
           ListarTabla();
+          
         }
     }
     

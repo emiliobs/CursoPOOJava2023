@@ -3,23 +3,32 @@ package Controlador;
 import Modelo.Producto;
 import Modelo.ProductoDAO;
 import Vista.Interfaz;
+import com.sun.source.tree.IfTree;
 import java.awt.Dimension;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class ControladorProducto implements ActionListener
 {
-
+    //Instancias
     Producto producto = new Producto();
     ProductoDAO ProductoDAO = new ProductoDAO();
     Vista.Interfaz vista = new Interfaz();
     DefaultTableModel modeloTabla = new DefaultTableModel();
+    
+    //Variables Globales
+    private int codigo;
+    private String nombre;
+    private double precio;
+    private  int inventario;
 
     public ControladorProducto(Vista.Interfaz vista)
     {
@@ -89,11 +98,113 @@ public class ControladorProducto implements ActionListener
         }
 
     }
-
+    
+    //---------------------------------------------------Validar Formulario:
+    
+    private boolean ValidarDatos()
+    {
+        if ("".equals(vista.getTxtNombre().getText()))
+        {
+            JOptionPane.showMessageDialog(null,"Por favor Ingrese Nombre","ERROR", JOptionPane.ERROR_MESSAGE);
+            
+            return false;
+        }
+        
+        if ("".equals(vista.getTxtPrecio().getText()))
+        {
+            JOptionPane.showMessageDialog(null,"Por favor Ingrese Precio","ERROR", JOptionPane.ERROR_MESSAGE);
+            
+            return  false;
+        }
+        
+        if ("".equals(vista.getTxtInventario().getText()))
+        {
+            JOptionPane.showMessageDialog(null,"Por favor Ingrese Inventario","ERROR", JOptionPane.ERROR_MESSAGE);
+            
+            return  false;
+        }
+        
+        return true;
+   
+    }
+    
+    //<etodo 3 en 1:
+    // 1. cargando las variables globales
+    // 2 .parseando los valores
+    // 3 .Estamos validando que precio y inventario sean numericos
+    private boolean CargarDatos()
+    {
+        try
+        {
+            nombre = vista.getTxtNombre().getText();
+            precio = Double.parseDouble(vista.getTxtPrecio().getText());
+            inventario =  Integer.parseInt( vista.getTxtInventario().getText());
+            
+            return true;
+        }
+        catch (NumberFormatException e)
+        {
+            
+            JOptionPane.showConfirmDialog(null, "Los campo Precio e INventario deben ser Númericos", "ERROR", JOptionPane.ERROR_MESSAGE);
+            System.out.println("ERROR al cargar Datos: " + e);
+        
+            return false;
+        }  
+     
+    }
+    
+    private void  LimpiarCampo()
+    {
+        vista.getTxtNombre().setText("");
+        vista.getTxtPrecio().setText("");
+        vista.getTxtInventario().setText("");
+        codigo = 0;
+        nombre = "";
+        precio = 0;
+        inventario = 0;
+    }
+    
+    //----------------------------------------------------------------------------------------------
+    
+    private  void AgregarProducto()
+    {
+        try
+        {
+            if (ValidarDatos())
+            {
+                if (CargarDatos())
+                {
+                    Producto producto = new Producto(nombre, precio, inventario);
+                    ProductoDAO.Agregar(producto);
+                    
+                    JOptionPane.showConfirmDialog(null,"Registro Guardado de forma Exitosa!");
+                }
+            }
+        }
+        catch (HeadlessException e)
+        {
+            System.out.println("ERROR en agregar datos en elcontroloador: " + e);
+        }
+        finally
+        {
+          ListarTabla();
+        }
+    }
+    
+    
+    //Dar acciones a los botones:
     @Override
     public void actionPerformed(ActionEvent e)
     {
-
+        if (e.getSource() == vista.getBtnAgregar())
+        {
+            AgregarProducto();
+        }
+        
+        if (e.getSource() == vista.getBtnLImpiar())
+        {
+            LimpiarCampo();
+        }
     }
 
 }

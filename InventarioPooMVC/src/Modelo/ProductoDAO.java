@@ -5,6 +5,7 @@ import java.util.List;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 
@@ -15,7 +16,7 @@ public class ProductoDAO
     PreparedStatement preparedStatement;
     ResultSet resultSet;
     
-    public List Listar()
+    public List Listar()            
     {
         String sql = "Select * From productos";
         List<Producto> lista = new ArrayList<>();
@@ -45,6 +46,27 @@ public class ProductoDAO
         return  lista;
     }
     
+    
+    //Metodo Agregar
+    public  void Agregar(Producto producto)
+    {
+        String sql = "Insert Into productos (nombre, precio, inventario) Values(?, ?, ?)";
+        
+        try
+        {
+          connection = conexionBD.ConectarBaseDatos();
+          preparedStatement = connection.prepareStatement(sql);
+          preparedStatement.setString(1, producto.getNombre());
+          preparedStatement.setDouble(2, producto.getPrecio());
+          preparedStatement.setInt(3, producto.getInventario());
+          
+          preparedStatement.executeQuery();
+        }
+        catch (SQLException e)
+        {
+            System.out.println("ERROR en Agregar " + e );
+        }
+    }
     
     
 }

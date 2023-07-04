@@ -157,7 +157,7 @@ public class Interfaz extends javax.swing.JFrame
         ));
         jScrollPane1.setViewportView(tblTabla);
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 204, 204));
         jLabel7.setText("Selecciones un Producto para Actualizar o Borrar");
 

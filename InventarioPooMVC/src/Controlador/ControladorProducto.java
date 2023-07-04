@@ -209,6 +209,11 @@ public class ControladorProducto implements ActionListener
                     LimpiarCampo();
                 }
             }
+            else
+            {
+               JOptionPane.showMessageDialog(null,"Debe seleccionar un Porducto de la Tabla.","ERROR", JOptionPane.ERROR_MESSAGE );
+
+            }
         }
         catch (HeadlessException e)
         {
@@ -230,10 +235,14 @@ public class ControladorProducto implements ActionListener
                 JOptionPane.showMessageDialog(null,"Registro Borrrado!");
                 LimpiarCampo();
             }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"Debe seleccionar un Porducto de la Tabla.","ERROR", JOptionPane.ERROR_MESSAGE );
+
+            }
         }
         catch (HeadlessException e)
         {
-            JOptionPane.showMessageDialog(null,"Debe seleccionar un Porducto de la Tabla.","ERROR", JOptionPane.ERROR_MESSAGE );
             System.out.println("ERROR Borrar el Producto Controlado: " + e);
         }
         finally

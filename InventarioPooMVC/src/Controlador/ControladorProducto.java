@@ -87,6 +87,7 @@ public class ControladorProducto implements ActionListener
         try
         {
             JTable target = (JTable) me.getSource();
+            codigo = (int) vista.getTblTabla().getModel().getValueAt(target.getSelectedRow(), 0);
             vista.getTxtNombre().setText(vista.getTblTabla().getModel().getValueAt(target.getSelectedRow(), 1).toString());
             vista.getTxtPrecio().setText(vista.getTblTabla().getModel().getValueAt(target.getSelectedRow(), 2).toString());
             vista.getTxtInventario().setText(vista.getTblTabla().getModel().getValueAt(target.getSelectedRow(), 3).toString());
@@ -194,6 +195,31 @@ public class ControladorProducto implements ActionListener
     }
     
     
+    private  void Actializar()
+    {
+        try
+        {
+            if (ValidarDatos())
+            {
+                if (CargarDatos())
+                {
+                    Producto producto = new Producto(codigo, nombre, precio, inventario);
+                    ProductoDAO.Actualizar(producto);
+                    JOptionPane.showMessageDialog(null, "Registro Actualizado");
+                    LimpiarCampo();
+                }
+            }
+        }
+        catch (HeadlessException e)
+        {
+            System.out.println("ERROR Actualizar Controlador: " + e);
+        }
+        finally
+        {
+            ListarTabla();
+        }
+    }
+    
     //Dar acciones a los botones:
     @Override
     public void actionPerformed(ActionEvent e)
@@ -206,6 +232,11 @@ public class ControladorProducto implements ActionListener
         if (e.getSource() == vista.getBtnLImpiar())
         {
             LimpiarCampo();
+        }
+        
+        if (e.getSource() == vista.getBtnActualizar())
+        {
+            Actializar();
         }
     }
 

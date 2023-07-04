@@ -69,4 +69,26 @@ public class ProductoDAO
     }
     
     
+    //Metodo  Actualizar datos:
+    public void Actualizar(Producto producto)
+    {
+        String sql = "Update  productos Set nombre = ?, precio = ?, inventario = ? Where codigo = ?";
+        
+        try
+        {
+           connection = conexionBD.ConectarBaseDatos();
+           preparedStatement = connection.prepareStatement(sql);
+           preparedStatement.setString(1, producto.getNombre());
+           preparedStatement.setDouble(2, producto.getPrecio());
+           preparedStatement.setInt(3, producto.getInventario());
+           preparedStatement.setInt(4, producto.getCodigo());
+           
+           preparedStatement.executeUpdate();
+        }
+        catch (SQLException e)
+        {
+            System.out.println("ERROR Actualizar Producto DAO: " + e);
+        }
+    }
+    
 }

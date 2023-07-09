@@ -20,6 +20,7 @@ public class AppRelaciones
       
       Propietario propietario = new Propietario();
       Propietario propietario1 = new Propietario();
+      Propietario propietario2 = new Propietario();
       
       propietario.setId(23l);
       propietario.setNombre("Emilio");
@@ -28,9 +29,14 @@ public class AppRelaciones
       propietario1.setId(28l);
       propietario1.setNombre("Camila");
       propietario1.setApellido("Linda");
+     
+      propietario2.setId(55l);
+      propietario2.setNombre("BLanca");
+      propietario2.setApellido("Urrego");
       
       listaPropietario.add(propietario);
       listaPropietario.add(propietario1);
+      listaPropietario.add(propietario2);
       
       auto.setListaPropietario(listaPropietario);
       

@@ -67,11 +67,17 @@ public class AppVideoJuego
         {
             if (listaVideoJuego.getConsola().equals("Nitendo 64"))
             {
-               System.out.println("Titulo         : " + listaVideoJuego.getTitulo()  +
-                                  " Consola       : " + listaVideoJuego.getConsola() +
-                                  " # de Jugadores: " + listaVideoJuego.getCantidadJugadores());
+//               System.out.println("Titulo         : " + listaVideoJuego.getTitulo()  +
+//                                  " Consola       : " + listaVideoJuego.getConsola() +
+//                                  " # de Jugadores: " + listaVideoJuego.getCantidadJugadores());
+            
+                System.out.println(listaVideoJuego.toString());
+             
             }
+         
         }
+         
+
         
         System.out.println("");
         System.out.println("Fin del Programa!");

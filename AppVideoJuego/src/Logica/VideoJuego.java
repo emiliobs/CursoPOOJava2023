@@ -36,6 +36,12 @@ public class VideoJuego
         return categoria;
     }
 
+    @Override
+    public String toString()
+    {
+        return "VideoJuego: " + " codigo: " + codigo + ", titulo: " + titulo + ", consola: " + consola + ", cantidadJugadores: " + cantidadJugadores + ", categoria=" + categoria ;
+    }
+
     public void setCategoria(String categoria)
     {
         this.categoria = categoria;

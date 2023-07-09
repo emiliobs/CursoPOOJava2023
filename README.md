@@ -18,3 +18,6 @@ Parte 8 – Borrar - Producto DAO Controlador.
 
 # CRUD Inventario - Mostrarndo los registros y mas..
 <img width="1268" alt="image" src="https://github.com/emiliobs/CursoPOOJava2023/assets/3122465/2d081934-8a66-40c1-bc5f-1b28dd5ff18c">
+
+# Practica Integrador Video Juegos:
+<img width="1275" alt="image" src="https://github.com/emiliobs/CursoPOOJava2023/assets/3122465/f7cdaea4-084d-4493-91a0-3aa8a9486ade">

@@ -21,3 +21,6 @@ Parte 8 – Borrar - Producto DAO Controlador.
 
 # Practica Integrador Video Juegos:
 <img width="1275" alt="image" src="https://github.com/emiliobs/CursoPOOJava2023/assets/3122465/f7cdaea4-084d-4493-91a0-3aa8a9486ade">
+
+# Conversio de diferentes tipo de datos:
+<img width="1275" alt="image" src="https://github.com/emiliobs/CursoPOOJava2023/assets/3122465/66a21130-deb7-4cbf-9ecc-670453f60c00">

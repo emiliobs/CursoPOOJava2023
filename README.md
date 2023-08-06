@@ -24,3 +24,6 @@ Parte 8 – Borrar - Producto DAO Controlador.
 
 # Conversio de diferentes tipo de datos:
 <img width="1275" alt="image" src="https://github.com/emiliobs/CursoPOOJava2023/assets/3122465/66a21130-deb7-4cbf-9ecc-670453f60c00">
+
+# EJERCICIO INTEGRADOR con JAVA POO PlantasApp
+<img width="1280" alt="image" src="https://github.com/emiliobs/CursoPOOJava2023/assets/3122465/96fa959e-053e-4aad-b9cc-799b8445b46b">

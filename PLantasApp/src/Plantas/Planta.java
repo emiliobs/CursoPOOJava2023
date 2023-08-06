@@ -1,7 +1,7 @@
 
 package Plantas;
 
-public class Planta
+public abstract class Planta
 {
     private String nombre;
     private double altoTallo;
@@ -59,6 +59,8 @@ public class Planta
     {
         this.climaIdeal = climaIdeal;
     }
+    
+     public abstract void DecirLoQueSoy();
     
     
 }

@@ -1,13 +1,27 @@
 package com.mycompany.jpaprueba.logica;
 
 import java.util.Date;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+@Entity
 public class Alumno
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    
+    @Basic
     private String nombre;
     private String apellido;
-   private Date fechaNacimiento;
+    
+    @Temporal(TemporalType.DATE)
+    private Date fechaNacimiento;
 
     public Alumno()
     {

@@ -1,7 +1,4 @@
-package com.mycompany.jpaprueba.logica;
-
-
-
+package com.mycompany.jpacrud.logica;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -13,7 +10,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Alumno implements Serializable 
+public class Alumno implements Serializable
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,7 +18,6 @@ public class Alumno implements Serializable
     
     @Basic
     private String nombre;
-     @Basic
     private String apellido;
     
     @Temporal(TemporalType.DATE)
@@ -78,7 +74,4 @@ public class Alumno implements Serializable
     {
         this.apellido = apellido;
     }
-   
-   
-   
 }

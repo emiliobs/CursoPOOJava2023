@@ -30,3 +30,7 @@ Parte 8 – Borrar - Producto DAO Controlador.
 
 # JPA Crud - Crear 
 <img width="1276" alt="image" src="https://github.com/emiliobs/CursoPOOJava2023/assets/3122465/c6be9d94-c011-46d6-829c-f99e81cca840">
+
+# JPA Crud - Eliminar
+<img width="1275" alt="image" src="https://github.com/emiliobs/CursoPOOJava2023/assets/3122465/50f2448e-dd8c-4345-a414-5988f9c34dc6">
+

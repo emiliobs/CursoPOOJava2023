@@ -13,9 +13,18 @@ public class JPACrud {
     {
         
         Controladora controladora = new Controladora();
-        Alumno alumno = new Alumno(34, "Linda", "Carter", new Date());
+        
+        System.out.println("");
+        System.out.println("=====   Ingresar Datos en la BD  =====");
+        Alumno alumno = new Alumno(59, "Blanca", "Linda", new Date());
         controladora.CrearAlumno(alumno);
+        System.out.println("");
         System.out.println("El Alumno ingresa en la BD con Id: " + alumno.getId() + " Nombre: " + alumno.getNombre() + " y Apellido: " + alumno.getApellido());
+       
+        System.out.println("");
+        System.out.println("=====   Eliminar Datos de la BD   =====");
+        controladora.EliminarAlumno(56);
+        System.out.println("Dato Elimidado de forma Exitosa");
         
         
 //        System.out.println("Creando la Identiry con JPA en la base de datos, tablas!");

@@ -10,4 +10,11 @@ public class Controladora
     {
         controladoraPersistencia.CrearAlumno(alumno);
     }
+    
+    
+    public void EliminarAlumno(int id)
+    {
+        controladoraPersistencia.EliminarAlumno(id);
+    }
+    
 }

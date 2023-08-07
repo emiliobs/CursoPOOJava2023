@@ -27,3 +27,6 @@ Parte 8 – Borrar - Producto DAO Controlador.
 
 # EJERCICIO INTEGRADOR con JAVA POO PlantasApp
 <img width="1280" alt="image" src="https://github.com/emiliobs/CursoPOOJava2023/assets/3122465/96fa959e-053e-4aad-b9cc-799b8445b46b">
+
+# JPA Crud - Crear 
+<img width="1276" alt="image" src="https://github.com/emiliobs/CursoPOOJava2023/assets/3122465/c6be9d94-c011-46d6-829c-f99e81cca840">

@@ -17,4 +17,9 @@ public class Controladora
         controladoraPersistencia.EliminarAlumno(id);
     }
     
+    public  void EditarAlumno(Alumno alumno)
+    {
+        controladoraPersistencia.EditarAlumno(alumno);
+    }
+    
 }

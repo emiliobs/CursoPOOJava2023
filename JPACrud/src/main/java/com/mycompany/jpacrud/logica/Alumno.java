@@ -74,4 +74,12 @@ public class Alumno implements Serializable
     {
         this.apellido = apellido;
     }
+
+    @Override
+    public String toString()
+    {
+        return  "Alumno{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento + '}';
+    }
+    
+    
 }

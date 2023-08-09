@@ -1,6 +1,7 @@
 package com.mycompany.jpacrud.logica;
 
 import com.mycompany.jpacrud.persistencia.ControladoraPersistencia;
+import java.util.ArrayList;
 
 public class Controladora
 {
@@ -21,5 +22,22 @@ public class Controladora
     {
         controladoraPersistencia.EditarAlumno(alumno);
     }
+    
+     public Alumno TraerAlumno(int id)
+    {
+      return controladoraPersistencia.TraerAlumno(id);
+    }
+    
+    public ArrayList<Alumno> TraerAlumnos()
+    {
+      return controladoraPersistencia.TraerAlumnos();
+    }
+
+    
+       
+    
+    
+    
+    
     
 }

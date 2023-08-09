@@ -12,6 +12,7 @@ public class Controladora
         controladoraPersistencia.CrearAlumno(alumno);
     }
     
+    //Alumnos
     
     public void EliminarAlumno(int id)
     {
@@ -32,12 +33,34 @@ public class Controladora
     {
       return controladoraPersistencia.TraerAlumnos();
     }
-
     
-       
+      // Carrera:
+    
+    public  void CrearCarrera(Carrera carrera)
+    {
+        controladoraPersistencia.CrearCarrera(carrera);
+    }
     
     
+    public void EliminarCarrera(int id)
+    {
+        controladoraPersistencia.EliminarCarrera(id);
+    }
     
+    public  void EditarCarrera(Carrera carrera)
+    {
+        controladoraPersistencia.EditarCarrera(carrera);
+    }
+    
+    public Carrera TraerCarrera(int id)
+    {
+      return controladoraPersistencia.TraerCarrera(id);
+    }
+    
+    public ArrayList<Carrera> TraerCarreras()
+    {
+      return controladoraPersistencia.TraerCarreras();
+    }
     
     
 }

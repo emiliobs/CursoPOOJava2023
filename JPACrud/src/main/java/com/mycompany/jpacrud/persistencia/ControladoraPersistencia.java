@@ -1,6 +1,7 @@
 package com.mycompany.jpacrud.persistencia;
 
 import com.mycompany.jpacrud.logica.Alumno;
+import com.mycompany.jpacrud.logica.Carrera;
 import com.mycompany.jpacrud.persistencia.exceptions.NonexistentEntityException;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,7 @@ public class ControladoraPersistencia
 
   
     AlumnoJpaController alumnoJpaController = new AlumnoJpaController();
+    CarreraJpaController carreraJpaController = new CarreraJpaController();
 
     public void CrearAlumno(Alumno alumno)
     {
@@ -58,6 +60,51 @@ public class ControladoraPersistencia
           
           return ArrayAlumnos;
     }
+
+    public void CrearCarrera(Carrera carrera)
+    {
+        carreraJpaController.create(carrera);
+    }
+
+    public void EliminarCarrera(int id)
+    {
+        try
+        {
+            carreraJpaController.destroy(id);
+        }
+        catch (NonexistentEntityException ex)
+        {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void EditarCarrera(Carrera carrera)
+    {
+        try
+        {
+            carreraJpaController.edit(carrera);
+        }
+        catch (Exception ex)
+        {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+   public Carrera TraerCarrera(int id)
+    {
+         return carreraJpaController.findCarrera(id);
+        
+    }
+
+    public ArrayList<Carrera> TraerCarreras()
+    {
+        List<Carrera> listCarrera =  carreraJpaController.findCarreraEntities();
+        ArrayList<Carrera> arrayCarrera =new ArrayList<Carrera>(listCarrera);
+        
+        return arrayCarrera;
+    }
+
+    
     
         
     

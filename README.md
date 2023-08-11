@@ -37,4 +37,6 @@ Parte 8 – Borrar - Producto DAO Controlador.
 # JPA Crud - Editar
 <img width="1273" alt="image" src="https://github.com/emiliobs/CursoPOOJava2023/assets/3122465/33d05316-8be8-48e1-b555-9581250d24c4">
 
+# JPA -Crud Relacion de dos Identitades Alumno y Carrera OneToOne
+<img width="1279" alt="image" src="https://github.com/emiliobs/CursoPOOJava2023/assets/3122465/bbc7abca-a2c1-4c13-8791-d70674d9856f">
 

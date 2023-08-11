@@ -2,19 +2,19 @@ package com.mycompany.jpacrud.persistencia;
 
 import com.mycompany.jpacrud.logica.Alumno;
 import com.mycompany.jpacrud.logica.Carrera;
+import com.mycompany.jpacrud.logica.Materia;
 import com.mycompany.jpacrud.persistencia.exceptions.NonexistentEntityException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 public class ControladoraPersistencia
 {
-
-  
     AlumnoJpaController alumnoJpaController = new AlumnoJpaController();
     CarreraJpaController carreraJpaController = new CarreraJpaController();
+    MateriaJpaController materiaJpaController = new   MateriaJpaController();
 
     public void CrearAlumno(Alumno alumno)
     {
@@ -104,10 +104,49 @@ public class ControladoraPersistencia
         return arrayCarrera;
     }
 
-    
-    
-        
-    
+    public void CrearMateria(Materia materia)
+    {
+        materiaJpaController.create(materia);
+    }
 
+    public void EliminarMateria(int id)
+    {
+        try
+        {
+            materiaJpaController.destroy(id);
+        }
+        catch (NonexistentEntityException ex)
+        {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void EditarMateria(Materia materia)
+    {
+        try
+        {
+            materiaJpaController.edit(materia);
+        }
+        catch (Exception ex)
+        {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public Materia TraerMateria(int id)
+    {
+        return materiaJpaController.findMateria(id);
+    }
+
+    public LinkedList<Materia> TraerListaMateria()
+    {
+        List<Materia> listaMateria = materiaJpaController.findMateriaEntities();
+        LinkedList<Materia> lista = new LinkedList(listaMateria);
+        
+        return lista;
+                
+    }
+
+    
     
 }

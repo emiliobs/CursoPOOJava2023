@@ -1,11 +1,14 @@
 package com.mycompany.jpacrud.logica;
 
+
 import com.mycompany.jpacrud.persistencia.ControladoraPersistencia;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.concurrent.LinkedBlockingDeque;
 
 public class Controladora
 {
-    ControladoraPersistencia controladoraPersistencia = new ControladoraPersistencia();
+   ControladoraPersistencia controladoraPersistencia = new ControladoraPersistencia();
     
     public  void CrearAlumno(Alumno alumno)
     {
@@ -62,5 +65,31 @@ public class Controladora
       return controladoraPersistencia.TraerCarreras();
     }
     
+    // MAteria
     
+     public  void CrearMateria(Materia materia)
+    {
+        controladoraPersistencia.CrearMateria(materia);
+    }
+    
+    
+    public void EliminarMateria(int id)
+    {
+        controladoraPersistencia.EliminarMateria(id);
+    }
+    
+    public  void EditarMateria(Materia materia)
+    {
+        controladoraPersistencia.EditarMateria(materia);
+    }
+    
+    public Materia TraerMateria(int id)
+    {
+      return controladoraPersistencia.TraerMateria(id);
+    }
+    
+    public LinkedList<Materia> TraerLIstaMateria()
+    {
+      return controladoraPersistencia.TraerListaMateria();
+    }
 }

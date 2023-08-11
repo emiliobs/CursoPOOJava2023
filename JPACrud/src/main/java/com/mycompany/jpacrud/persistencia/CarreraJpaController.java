@@ -33,13 +33,11 @@ public class CarreraJpaController implements Serializable
     {
         return emf.createEntityManager();
     }
-
+    
     public CarreraJpaController()
     {
          emf = Persistence.createEntityManagerFactory("JPAcrud");
     }
-    
-    
 
     public void create(Carrera carrera)
     {
